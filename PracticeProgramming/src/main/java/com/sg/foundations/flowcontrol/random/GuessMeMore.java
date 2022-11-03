@@ -2,6 +2,7 @@ package com.sg.foundations.flowcontrol.random;
 
 
 import java.util.InputMismatchException;
+import java.util.Random;
 import java.util.Scanner;
 
 public class GuessMeMore {
@@ -36,6 +37,11 @@ public class GuessMeMore {
   }
 
   public static void main(String[] args) {
-    new GuessMeMore();
+    Random random = new Random();
+    for(int i = 0; i < 500; i++) {
+    int r = random.nextInt(201) - 100;
+      System.out.println(r);
+    }
+//    new GuessMeMore();
   }
 }

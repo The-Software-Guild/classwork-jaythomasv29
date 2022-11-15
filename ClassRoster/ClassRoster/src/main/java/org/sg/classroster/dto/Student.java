@@ -45,12 +45,31 @@ public class Student {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
+
         Student student = (Student) o;
-        return firstName.equals(student.firstName) && lastName.equals(student.lastName) && studentId.equals(student.studentId) && cohort.equals(student.cohort);
+
+        if (!firstName.equals(student.firstName)) return false;
+        if (!lastName.equals(student.lastName)) return false;
+        if (!studentId.equals(student.studentId)) return false;
+        return cohort.equals(student.cohort);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(firstName, lastName, studentId, cohort);
+        int result = firstName.hashCode();
+        result = 31 * result + lastName.hashCode();
+        result = 31 * result + studentId.hashCode();
+        result = 31 * result + cohort.hashCode();
+        return result;
+    }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", studentId='" + studentId + '\'' +
+                ", cohort='" + cohort + '\'' +
+                '}';
     }
 }

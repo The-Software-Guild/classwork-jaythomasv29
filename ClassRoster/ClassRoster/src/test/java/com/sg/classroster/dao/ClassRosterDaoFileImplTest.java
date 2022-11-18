@@ -48,7 +48,7 @@ public class ClassRosterDaoFileImplTest {
     }
 
     @Test
-    public void testAddGetAllStudents() throws Exception {
+    public void testGetAllStudents() throws Exception {
         // Create our first student
         Student firstStudent = new Student("0001");
         firstStudent.setFirstName("Ada");
